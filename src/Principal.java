@@ -1,30 +1,31 @@
+import java.io.InputStream;
+import java.util.Scanner;
+
 public class Principal {
+    public static void main(String[] args) {
 
-    public static void main(String[] args) throws Exception {
+        System.out.println("Analizaremos el caracter en la posicion 7 del texto.");
+        System.out.println("(de ser posible)");
 
-        String string = "hola";
-        int entero = 4;
+        Scanner input = new Scanner(System.in);
 
-        caracterEn(string,entero);
+        String string = input.nextLine();
 
-    }//fin main
+        LectorCadena lector = new LectorCadena();
 
-    public static void caracterEn (String string, int entero) throws Exception {
 
-        int longitud = string.length();
+        try{
+            lector.caracterEn(string, 7);
+        }catch (Exception e){
+            System.out.println("Has intentado recuperar una posición de la cadena de caracteres que no existe");
+        }
 
-        if(entero <= longitud){
 
-            System.out.println("Cadena analizada: "+string);
-            System.out.println("caracter "+entero+" en la cadena: "+string.charAt(entero));;
 
-        }//fin if
-        else{
-            throw new Exception();
-        }//fin else
+
+
 
 
 
     }
-
-}//fin clase
+}
